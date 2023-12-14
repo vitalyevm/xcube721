@@ -1,4 +1,3 @@
-import { Investments } from "./../typechain-types/contracts/Investments";
 import { ethers } from "ethers";
 import XCUBE_ABI from "../artifacts/contracts/XCube.sol/XCube.json";
 import INVESTMENTS_ABI from "../artifacts/contracts/Investments.sol/Investments.json";
@@ -14,11 +13,7 @@ function getEnvVariable(key, defaultValue?: any) {
 }
 
 function getProvider(networkUrl) {
-    // return ethers.getDefaultProvider(getEnvVariable("NETWORK", "goerli"), {
-    //     infura: getEnvVariable("GOERLI_KEY"),
-    // });
     return new ethers.providers.JsonRpcProvider(networkUrl);
-    // return new ethers.providers.JsonRpcProvider("https://mainnet.infura.io/v3/3a961d6501e54add9a41aa53f15de99b");
 }
 
 export function getAccount(networkUrl) {
